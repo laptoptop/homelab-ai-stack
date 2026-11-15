@@ -17,7 +17,7 @@ WireGuard mesh for remote access — no exposed management interfaces.
 
 ## Components
 - **Hypervisor**: Proxmox VE, containers for services, dedicated VM for GPU work.
-- **GPU inference**: RTX 4090 24GB — llama.cpp / GGUF quantized models, ComfyUI for
+- **GPU inference**: RTX 4070 12GB — llama.cpp / GGUF quantized models, ComfyUI for
   generative pipelines (image/video/audio/3D), served as systemd units.
 - **Agent layer**: custom agent runtime with sub-agents, MCP tool servers, and
   human-in-the-loop gates. Offensive-capable profiles are scope-gated (SOUL.md +
@@ -32,6 +32,8 @@ systems you're attacking — and the exact egress paths a prompt injection abuse
 
 ## Contents
 - `watchdog/` — DNS-level watchdog scripts
+- `redteam/` — LLM agent red-team notes: DVLA SQLi writeup, cross-model exploit
+  matrix, garak baseline and the replay/benchmark tooling
 - (more coming: systemd units, ComfyUI workflow hardening, agent sandbox configs)
 
 > Work in progress — documented publicly as part of a build-in-public series on
