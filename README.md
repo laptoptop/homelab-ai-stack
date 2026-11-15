@@ -32,8 +32,8 @@ systems you're attacking — and the exact egress paths a prompt injection abuse
 
 ## Contents
 - `watchdog/` — DNS-level watchdog scripts
-- `redteam/` — LLM agent red-team notes: DVLA SQLi writeup, cross-model exploit
-  matrix, garak baseline and the replay/benchmark tooling
+- [`llm-agent-redteam`](https://github.com/laptoptop/llm-agent-redteam) — separate
+  repo: DVLA SQLi writeup, cross-model exploit matrix, garak baseline + tooling
 - (more coming: systemd units, ComfyUI workflow hardening, agent sandbox configs)
 
 > Work in progress — documented publicly as part of a build-in-public series on
