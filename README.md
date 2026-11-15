@@ -40,10 +40,13 @@ WireGuard is the only remote path — no exposed management interfaces.
   [`llm-agent-redteam`](https://github.com/laptoptop/llm-agent-redteam).
 - **Generative GPU (physical workstation)**: RTX 4090 running ComfyUI for
   image/video/audio/3D pipelines — outside the Proxmox cluster so generation and
-  inference workloads don't fight over the same card.
+  inference workloads don't fight over the same card. The agent layer drives it over
+  the ComfyUI REST API, so "ask the agent for a video" turns into a workflow graph
+  submitted from another host.
 - **Agent layer (CT 109, Hermes)**: agent runtime with sub-agents, MCP tool servers
   and human-in-the-loop gates. Offensive-capable profiles are scope-gated
-  (SOUL.md + workspace SCOPE.md required before any action).
+  (SOUL.md + workspace SCOPE.md required before any action). It orchestrates the
+  local LLM endpoint (VM 100) and ComfyUI generation (4090 workstation) as tools.
 - **Data / automation**: database container, n8n for scheduled flows, openwebui as
   the chat front end, langgraph container kept for graph-based agent experiments.
 - **Network security**: pfSense routing between isolated subnets, AdGuard Home for
