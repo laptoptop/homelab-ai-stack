@@ -26,6 +26,9 @@ pfSense ── isolated server subnet ── Proxmox VE host (pve)
             └─ physical workstation: ComfyUI server (RTX 4090)
 
 Storages: local, local-lvm, nvme_backup. SDN zone: localnetwork.
+Two isolated L3 zones: a server subnet for the Proxmox/cluster traffic and a
+separate LAN for workstations and mobile devices — pfSense routes between them, so
+cluster services are never directly reachable from the LAN.
 WireGuard is the only remote path — no exposed management interfaces.
 ```
 
